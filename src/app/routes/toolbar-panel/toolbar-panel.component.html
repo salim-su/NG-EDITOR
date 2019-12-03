@@ -1,0 +1,58 @@
+<p>toolbar-panel works!</p>
+<div class="toolbar" #toolbar_dom>
+
+    <span [nzTooltipTitle]="i18n['tooltip.undo']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="undo">
+        <span class="iconfont icon-undo"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.redo']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="redo">
+            <span class="iconfont icon-redo"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.copy']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="copy">
+            <span class="iconfont icon-copy-o"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.paste']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="paste">
+            <span class="iconfont icon-paster-o"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.delete']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="delete">
+            <span class="iconfont icon-delete-o"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.zoomIn']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="zoomIn">
+            <span class="iconfont icon-zoom-in-o"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.zoomOut']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="zoomOut">
+            <span class="iconfont icon-zoom-out-o"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.resetZoom']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="resetZoom">
+            <span class="iconfont icon-actual-size-o"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.autoFit']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="autoFit">
+            <span class="iconfont icon-fit"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.toFront']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="toFront">
+            <span class="iconfont icon-to-front"></span>
+    </span>
+
+    <span [nzTooltipTitle]="i18n['tooltip.toBack']" nzTooltipPlacement="topLeft" nz-tooltip class="command"
+          data-command="toBack">
+            <span class="iconfont icon-to-back"></span>
+    </span>
+</div>

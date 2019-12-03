@@ -92,24 +92,23 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { LayoutModule } from './layout/layout.module';
-
 @NgModule({
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    DelonModule.forRoot(),
-    CoreModule,
-    SharedModule,
-    LayoutModule,
-    RoutesModule,
-    ...I18NSERVICE_MODULES,
-    ...FORM_MODULES,
-    ...GLOBAL_THIRD_MODULES
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        DelonModule.forRoot(),
+        CoreModule,
+        SharedModule,
+        LayoutModule,
+        RoutesModule,
+        ...I18NSERVICE_MODULES,
+        ...FORM_MODULES,
+        ...GLOBAL_THIRD_MODULES,
+    ],
   providers: [
     ...LANG_PROVIDES,
     ...INTERCEPTOR_PROVIDES,

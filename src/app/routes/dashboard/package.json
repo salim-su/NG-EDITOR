@@ -1,0 +1,290 @@
+{
+    "nodes": [
+        {
+            "id": "g6",
+            "shape": "rectangle",
+            "label": "1111",
+            "labelCfg": {
+                "position": "center",
+                "style": {
+                    "fontSize": 16,
+                    "stroke": "#000000"
+                }
+            },
+            "width": 123.7695318156683,
+            "height": 55.62939453125,
+            "minWidth": 20,
+            "minHeight": 20,
+            "anchorPoints": [
+                [
+                    0.25,
+                    0
+                ],
+                [
+                    0.5,
+                    0
+                ],
+                [
+                    0.75,
+                    0
+                ],
+                [
+                    0.25,
+                    1
+                ],
+                [
+                    0.5,
+                    1
+                ],
+                [
+                    0.75,
+                    1
+                ],
+                [
+                    0,
+                    0.25
+                ],
+                [
+                    0,
+                    0.5
+                ],
+                [
+                    0,
+                    0.75
+                ],
+                [
+                    1,
+                    0.25
+                ],
+                [
+                    1,
+                    0.5
+                ],
+                [
+                    1,
+                    0.75
+                ]
+            ],
+            "shapeControl": {
+                "controllers": [
+                    [
+                        0,
+                        0,
+                        "nwse-resize"
+                    ],
+                    [
+                        0,
+                        0.5,
+                        "ew-resize"
+                    ],
+                    [
+                        0,
+                        1,
+                        "nesw-resize"
+                    ],
+                    [
+                        0.5,
+                        0,
+                        "ns-resize"
+                    ],
+                    [
+                        0.5,
+                        1,
+                        "ns-resize"
+                    ],
+                    [
+                        1,
+                        0,
+                        "nesw-resize"
+                    ],
+                    [
+                        1,
+                        0.5,
+                        "ew-resize"
+                    ],
+                    [
+                        1,
+                        1,
+                        "nwse-resize"
+                    ]
+                ],
+                "rotate": true
+            },
+            "x": 301.61523409216585,
+            "y": 149.185302734375,
+            "size": [
+                123.7695318156683,
+                55.62939453125
+            ],
+            "style": {
+                "fill": "#FFFFFF",
+                "fillOpacity": 1,
+                "stroke": "#000000",
+                "strokeOpacity": 1,
+                "lineWidth": 1,
+                "lineDash": [
+                    5,
+                    5
+                ]
+            },
+            "groupId": ""
+        },
+        {
+            "id": "g8",
+            "shape": "rounded-rectangle",
+            "label": "",
+            "labelCfg": {
+                "position": "center",
+                "style": {
+                    "fontSize": 16,
+                    "stroke": "#000000"
+                }
+            },
+            "width": 80,
+            "height": 40,
+            "minWidth": 20,
+            "minHeight": 20,
+            "anchorPoints": [
+                [
+                    0.25,
+                    0
+                ],
+                [
+                    0.5,
+                    0
+                ],
+                [
+                    0.75,
+                    0
+                ],
+                [
+                    0.25,
+                    1
+                ],
+                [
+                    0.5,
+                    1
+                ],
+                [
+                    0.75,
+                    1
+                ],
+                [
+                    0,
+                    0.25
+                ],
+                [
+                    0,
+                    0.5
+                ],
+                [
+                    0,
+                    0.75
+                ],
+                [
+                    1,
+                    0.25
+                ],
+                [
+                    1,
+                    0.5
+                ],
+                [
+                    1,
+                    0.75
+                ]
+            ],
+            "shapeControl": {
+                "controllers": [
+                    [
+                        0,
+                        0,
+                        "nwse-resize"
+                    ],
+                    [
+                        0,
+                        0.5,
+                        "ew-resize"
+                    ],
+                    [
+                        0,
+                        1,
+                        "nesw-resize"
+                    ],
+                    [
+                        0.5,
+                        0,
+                        "ns-resize"
+                    ],
+                    [
+                        0.5,
+                        1,
+                        "ns-resize"
+                    ],
+                    [
+                        1,
+                        0,
+                        "nesw-resize"
+                    ],
+                    [
+                        1,
+                        0.5,
+                        "ew-resize"
+                    ],
+                    [
+                        1,
+                        1,
+                        "nwse-resize"
+                    ]
+                ],
+                "rotate": true
+            },
+            "x": 329.5,
+            "y": 323,
+            "size": [
+                80,
+                40
+            ],
+            "style": {
+                "fill": "#FFFFFF",
+                "fillOpacity": 1,
+                "stroke": "#000000",
+                "strokeOpacity": 1,
+                "lineWidth": 1,
+                "lineDash": []
+            },
+            "groupId": ""
+        }
+    ],
+    "edges": [
+        {
+            "id": "g10",
+            "source": "g6",
+            "sourceAnchor": 8,
+            "target": "g8",
+            "label": "",
+            "labelCfg": {
+                "position": "center",
+                "style": {
+                    "fontSize": 16,
+                    "stroke": "#000000"
+                }
+            },
+            "attrs": {
+                "start": "g6",
+                "end": "g8"
+            },
+            "style": {
+                "stroke": "#000000",
+                "lineWidth": 1,
+                "strokeOpacity": 1,
+                "lineDash": []
+            },
+            "shape": "x-line",
+            "startArrow": false,
+            "endArrow": false,
+            "targetAnchor": 2
+        }
+    ],
+    "groups": []
+}

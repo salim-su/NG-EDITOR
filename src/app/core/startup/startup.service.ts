@@ -66,7 +66,7 @@ export class StartupService {
       resolve(null);
     });
   }
-  
+
   private viaMockI18n(resolve: any, reject: any) {
     this.httpClient
       .get(`assets/tmp/i18n/${this.i18n.defaultLang}.json`)
@@ -77,7 +77,7 @@ export class StartupService {
         this.viaMock(resolve, reject);
       });
   }
-  
+
   private viaMock(resolve: any, reject: any) {
     // const tokenData = this.tokenService.get();
     // if (!tokenData.token) {
@@ -117,7 +117,22 @@ export class StartupService {
             text: 'Quick Menu',
             icon: { type: 'icon', value: 'rocket' },
             shortcutRoot: true
-          }
+          },
+            {
+                text: '测试',
+                link: '/test',
+                icon: { type: 'icon', value: 'appstore' }
+            },
+            {
+                text: 'main',
+                link: '/main',
+                icon: { type: 'icon', value: 'appstore' }
+            },
+            {
+                text: 'workflow',
+                link: '/workflow',
+                icon: { type: 'icon', value: 'appstore' }
+            },
         ]
       }
     ]);
