@@ -4,7 +4,7 @@ import {
     ElementRef,
     Input,
     OnChanges,
-    OnInit,
+    OnInit, SimpleChanges,
     ViewChild,
 } from '@angular/core';
 import G6 from '@antv/g6/src';
@@ -26,7 +26,20 @@ registerBehavior(G6);
     selector: 'wfd-vue',
     // selector: 'app-main',
     templateUrl: './main.component.html',
-    styles: [],
+    styles: [
+        `
+      .footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        border-top: 1px solid rgb(232, 232, 232);
+        padding: 10px 16px;
+        text-align: right;
+        left: 0px;
+        background: #fff;
+      }
+    `
+    ]
 })
 export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     @Input() isView: boolean = false;
@@ -36,6 +49,10 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     @Input() data = { nodes: [], edges: [] };
     @Input() users: Array<any> = [];
     @Input() groups: Array<any> = [];
+
+    /*控制右侧弹窗*/
+    visible = false;
+
 
     resizeFunc: () => void;
     selectedModel = {};
@@ -47,8 +64,8 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
         signalDefs: [],
         messageDefs: [],
     };
-    graph: any;
-    cmdPlugin: any;
+    graph: any=null;
+    cmdPlugin: any=null;
     /*i18n*/
     i18n = i18n['zh'];
 
@@ -135,8 +152,38 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     ngAfterViewInit(): void {
     }
 
-    ngOnChanges(): void {
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log(changes);
+
+        if (changes.data.currentValue !== changes.data.previousValue) {
+            if (this.graph) {
+                this.graph.changeData(this.initShape(changes.data.currentValue));
+                this.graph.setMode(this.mode);
+                this.graph.emit('canvas:click');
+                if (this.cmdPlugin) {
+                    this.cmdPlugin.initPlugin(this.graph);
+                }
+                if (this.isView) {
+                    this.graph.fitView(5)
+                }
+            }
+        }
+
+        // if (changes.msg) {
+        //
+        // }
+
+        // console.log(changes.msg.currentValue);
+        // if (changes.msg.currentValue == changes.msg.previousValue) {
+        //     console.log('前后数据一致');
+        // } else {
+        //     console.log('前后数据不一致');
+        // }
+
+
     }
+
 
 
     /*mounted() {
@@ -197,9 +244,14 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
 
     initEvents() {
         this.graph.on('afteritemselected', (items) => {
+            console.log(items);
+            if (items.length > 0) {
+                this.open();
+            }
             if (items && items.length > 0) {
                 const item = this.graph.findById(items[0]);
                 this.selectedModel = { ...item.getModel() };
+                console.log(this.selectedModel);
             } else {
                 this.selectedModel = this.processModel;
             }
@@ -215,6 +267,7 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     }
 
     onItemCfgChange(key, value) {
+        // console.log(key,value);
         const items = this.graph.get('selectedItems');
         if (items && items.length > 0) {
             const item = this.graph.findById(items[0]);
@@ -242,4 +295,12 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     }
 
 
+    open(): void {
+        this.visible = true;
+        console.log(1111);
+    }
+
+    close(): void {
+        this.visible = false;
+    }
 }

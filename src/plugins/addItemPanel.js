@@ -27,9 +27,18 @@ class AddItemPanel {
     initPlugin(graph) {
         // debugger;
 
+        console.log('salimsu11111');
+
         const parentNode = this.get('container');
+        console.log(parentNode);
         const ghost = createDOM('<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"' + ' style="opacity:1"/>');
-        const children = parentNode.querySelectorAll('div > .el-collapse-item > .el-collapse-item__wrap > .el-collapse-item__content > img[data-item]');
+
+
+        // const children = parentNode.querySelectorAll('img[data-item]');
+        //[data-item]
+        // console.log(children);
+
+        const children = parentNode.querySelectorAll('img[data-item]');
         each(children, (child, i) => {
             const addModel = (new Function("return " + child.getAttribute('data-item')))();
             console.log(addModel);

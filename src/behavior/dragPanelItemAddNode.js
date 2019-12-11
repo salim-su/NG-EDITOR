@@ -16,7 +16,6 @@ export default function(G6){
       }
     },
     onMouseMove(e){
-        // debugger;
       if(this.graph.get('onDragAddNode')){
         let delegateShape = this.graph.get('addDelegateShape');
         const addModel = this.graph.get('addModel');
@@ -45,26 +44,19 @@ export default function(G6){
       }
     },
     onMouseUp(e){
-        // debugger;
-
         if(this.graph.get('onDragAddNode')) {
-            debugger;
         const p = this.graph.getPointByClient(e.clientX,e.clientY);
         if(p.x > 0 && p.y > 0)
           this._addNode(p);
       }
     },
     onMouseLeave(e){
-        // debugger;
-
         if(this.graph.get('onDragAddNode')) {
         this._clearDelegate();
         this.graph.emit('afternodedragend');
       }
     },
     _clearDelegate(){
-        // debugger;
-
         if(this.graph.get('onDragAddNode')) {
         const delegateShape = this.graph.get('addDelegateShape');
         if (delegateShape) {
@@ -75,8 +67,6 @@ export default function(G6){
       }
     },
     _addNode(p){
-        // debugger;
-
         if(this.graph.get('onDragAddNode')) {
         const addModel = this.graph.get('addModel');
         const { clazz = 'userTask' } = addModel;

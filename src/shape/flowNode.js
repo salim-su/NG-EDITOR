@@ -257,6 +257,8 @@ export default function(G6) {
         [0.5, 0], // top
         [1, 0.5], // right
         [0.5, 1], // bottom
+          [0, 0.5], // left
+
       ]
     }
   }, 'base-node');
@@ -297,6 +299,8 @@ export default function(G6) {
         [0.5, 0], // top
         [0.5, 1], // bottom
         [0, 0.5], // left
+          [1, 0.5], // right
+
       ]
     }
   }, 'base-node');

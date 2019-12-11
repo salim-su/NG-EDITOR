@@ -17,6 +17,7 @@ import { WfdComponent } from './wfd/wfd.component';
 import { ItemPanelComponent } from './item-panel/item-panel.component';
 import { ToolbarPanelComponent } from './toolbar-panel/toolbar-panel.component';
 import { WorkflowComponent } from './workflow/workflow.component';
+import { StarPanelComponent } from './right-panel/star-panel/star-panel.component';
 
 const COMPONENTS = [
     DashboardComponent,
@@ -33,6 +34,7 @@ const COMPONENTS = [
     ItemPanelComponent,
     ToolbarPanelComponent,
     WorkflowComponent,
+    StarPanelComponent,
 
 ];
 const COMPONENTS_NOROUNT = [];
