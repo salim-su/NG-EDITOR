@@ -1,5 +1,6 @@
 export default function(G6){
   G6.registerBehavior('clickSelected', {
+
     getDefaultCfg() {
       return {
         multiple: false,

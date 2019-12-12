@@ -1,4 +1,4 @@
 <input nz-input placeholder="请选择文本" [(ngModel)]="labelValue" (ngModelChange)="onChange('label',$event)"/>
-<nz-date-picker nzShowTime nzFormat="YYYY-MM-DD HH:mm:ss" nzPlaceHolder="请选择开始时间" ngModel (ngModelChange)="onChange('beginDate',$event)"
+<nz-date-picker nzShowTime nzFormat="YYYY-MM-DD HH:mm:ss" nzPlaceHolder="请选择开始时间" [(ngModel)]="beginDateValue" (ngModelChange)="onChange('beginDate',$event)"
 ></nz-date-picker>
 <p>{{selData?.clazz}}</p>

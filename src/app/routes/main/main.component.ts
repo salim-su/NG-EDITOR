@@ -53,6 +53,7 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     /*控制右侧弹窗*/
     visible = false;
 
+    oldSelItemData: any=[];
 
     resizeFunc: () => void;
     selectedModel = {};
@@ -157,8 +158,6 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
 
 
     ngOnChanges(changes: SimpleChanges): void {
-        console.log(changes);
-
         if (changes.data.currentValue !== changes.data.previousValue) {
             if (this.graph) {
                 this.graph.changeData(this.initShape(changes.data.currentValue));
@@ -247,21 +246,24 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
 
     initEvents() {
         this.graph.on('afteritemselected', (items) => {
-            console.log(items);
             if (items.length > 0) {
                 this.open();
             }
             if (items && items.length > 0) {
                 const item = this.graph.findById(items[0]);
                 this.selectedModel = { ...item.getModel() };
-                console.log(this.selectedModel);
-            } else {
+            }
+            else {
                 this.selectedModel = this.processModel;
             }
+
+            console.log(this.selectedModel);
+
         });
         const page = this.canvas.nativeElement;
         const graph = this.graph;
         const height = this.height - 1;
+
 
         this.resizeFunc = () => {
             graph.changeSize(page.offsetWidth, height);
@@ -270,7 +272,6 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     }
 
     onItemCfgChange(key, value) {
-        // console.log(key,value);
         const items = this.graph.get('selectedItems');
         if (items && items.length > 0) {
             const item = this.graph.findById(items[0]);
@@ -300,8 +301,6 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
 
     open(): void {
         this.visible = true;
-        console.log(1111);
-        console.log(this.graph.save());
     }
 
     close(): void {

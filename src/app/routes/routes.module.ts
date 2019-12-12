@@ -11,13 +11,13 @@ import { UserRegisterResultComponent } from './passport/register-result/register
 // single pages
 import { CallbackComponent } from './callback/callback.component';
 import { UserLockComponent } from './passport/lock/lock.component';
-import { TestComponent } from './test/test.component';
 import { MainComponent } from './main/main.component';
 import { WfdComponent } from './wfd/wfd.component';
 import { ItemPanelComponent } from './item-panel/item-panel.component';
 import { ToolbarPanelComponent } from './toolbar-panel/toolbar-panel.component';
 import { WorkflowComponent } from './workflow/workflow.component';
 import { StarPanelComponent } from './right-panel/star-panel/star-panel.component';
+import { AllRightPanelComponent } from './right-panel/all-right-panel/all-right-panel.component';
 
 const COMPONENTS = [
     DashboardComponent,
@@ -28,13 +28,13 @@ const COMPONENTS = [
     // single pages
     CallbackComponent,
     UserLockComponent,
-    TestComponent,
     MainComponent,
     WfdComponent,
     ItemPanelComponent,
     ToolbarPanelComponent,
     WorkflowComponent,
     StarPanelComponent,
+    AllRightPanelComponent,
 
 ];
 const COMPONENTS_NOROUNT = [];

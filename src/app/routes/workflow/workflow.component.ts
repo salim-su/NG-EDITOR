@@ -11,7 +11,7 @@ export class WorkflowComponent implements OnInit {
     modalVisible = false;
     lang = 'zh';
     demoData = {
-        nodes: [{ id: 'startNode1', x: 50, y: 200, label: '', clazz: 'start', beginDate:'2019-09-09 12:12:12'},
+        nodes: [{ id: 'startNode1', x: 50, y: 200, label: '开始', clazz: 'start', beginDate:'2019-09-09 12:12:12'},
             { id: 'startNode2', x: 50, y: 320, label: '', clazz: 'timerStart' },
             { id: 'taskNode1', x: 200, y: 200, label: '主任审批', clazz: 'userTask',date:'2019-09-09' },
             { id: 'taskNode2', x: 400, y: 200, label: '经理审批', clazz: 'scriptTask' },

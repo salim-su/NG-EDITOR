@@ -11,6 +11,7 @@ export default function(G6){
       const items = this.graph.get('selectedItems');
       const focus = this.graph.get('focusGraphWrapper');
       if(e.keyCode === 8 && items && items.length > 0 && focus){
+          return false;
         if(this.graph.executeCommand) {
           this.graph.executeCommand('delete', {});
         }else{

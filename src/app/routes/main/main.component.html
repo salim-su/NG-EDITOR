@@ -3,12 +3,14 @@
 <nz-drawer
     [nzClosable]="false"
     [nzVisible]="visible"
+    [nzMask]="false"
     nzPlacement="right"
     nzTitle="工作流节点编辑"
     (nzOnClose)="close()"
 >
     <app-star-panel [selData]="selectedModel" (customClick)="onItemCfgChange($event['type'],$event['value'])"></app-star-panel>
 
+<!--    <app-all-right-panel [selData]="selectedModel" (customClick)="onItemCfgChange($event['type'],$event['value'])" ></app-all-right-panel>-->
     <div class="footer">
         <button type="button" (click)="close()" class="ant-btn" style="margin-right: 8px;"><span>Cancel</span></button>
         <button type="button" (click)="close()" class="ant-btn ant-btn-primary"><span>Submit</span></button>
@@ -22,7 +24,4 @@
     <div #canvas class="canvasPanel" style="width: 100%;border: 1px solid green;"></div>
 </div>
 
-<!--<div #salimsu class="salimsu" style="height: 20px;"></div>-->
-<!--<div class="col" #div>-->
-<!--    <app-alert #alert1 type="success"></app-alert>-->
 

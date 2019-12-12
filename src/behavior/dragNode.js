@@ -88,7 +88,7 @@ export default function (G6) {
                 }
 
             }
-            debugger;
+            // debugger;
 
         },
         _updateDelegate(item, x, y) {
