@@ -27,7 +27,7 @@ export function exportXML(json,canvas,createFile = true) {
       `${tab(6)}</bpmndi:BPMNShape>\n`;
     switch (node.clazz) {
       case 'start':
-        processXML += `${tab(4)}<startEvent id="${node.id}"></startEvent>\n`;
+        processXML += `${tab(4)}<startEvent id="${node.id}" beginDate="${node.beginDate}"></startEvent>\n`;
         break;
       case 'end':
         processXML += `${tab(4)}<endEvent id="${node.id}"></endEvent>\n`;

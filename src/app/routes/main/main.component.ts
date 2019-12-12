@@ -94,8 +94,11 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     }
 
     ngOnInit() {
+        console.log(this.canvas);
+        console.log(this.addItemPanel);
 
-        console.log(this.data);
+
+
         let plugins = [];
         if (!this.isView) {
             this.cmdPlugin = new Command();
@@ -298,6 +301,7 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     open(): void {
         this.visible = true;
         console.log(1111);
+        console.log(this.graph.save());
     }
 
     close(): void {

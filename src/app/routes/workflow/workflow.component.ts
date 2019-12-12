@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-workflow',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
     styles: [],
 })
 export class WorkflowComponent implements OnInit {
+    @ViewChild('workFlow', { static: true }) workFlow: any;
+
     modalVisible = false;
     lang = 'zh';
     demoData = {
-        nodes: [{ id: 'startNode1', x: 50, y: 200, label: '', clazz: 'start' },
+        nodes: [{ id: 'startNode1', x: 50, y: 200, label: '', clazz: 'start', beginDate:'2019-09-09 12:12:12'},
             { id: 'startNode2', x: 50, y: 320, label: '', clazz: 'timerStart' },
             { id: 'taskNode1', x: 200, y: 200, label: '主任审批', clazz: 'userTask',date:'2019-09-09' },
             { id: 'taskNode2', x: 400, y: 200, label: '经理审批', clazz: 'scriptTask' },
@@ -28,7 +30,6 @@ export class WorkflowComponent implements OnInit {
             { source: 'taskNode3', target: 'endNode', sourceAnchor: 1, targetAnchor: 1, clazz: 'flow' },
             { source: 'catchNode1', target: 'endNode', sourceAnchor: 1, targetAnchor: 0, clazz: 'flow' }],
     };
-
     demoData1 = {
         nodes: [{ id: 'startNode1', x: 100, y: 200, label: '', clazz: 'start' },
             { id: 'startNode2', x: 50, y: 320, label: '', clazz: 'timerStart' },
@@ -49,7 +50,6 @@ export class WorkflowComponent implements OnInit {
             { source: 'taskNode3', target: 'endNode', sourceAnchor: 1, targetAnchor: 1, clazz: 'flow' },
             { source: 'catchNode1', target: 'endNode', sourceAnchor: 1, targetAnchor: 0, clazz: 'flow' }],
     };
-
     candidateUsers = [{ id: '1', name: 'Tom' }, { id: '2', name: 'Steven' }, { id: '3', name: 'Andy' }];
     candidateGroups = [{ id: '1', name: 'Manager' }, { id: '2', name: 'Security' }, { id: '3', name: 'OA' }];
 
@@ -58,10 +58,20 @@ export class WorkflowComponent implements OnInit {
     }
 
     ngOnInit() {
+
     }
 
     click1() {
         this.demoData = this.demoData1;
+    }
+
+    exportJson() {
+        console.log(this.workFlow.graph.save());
+        // console.log(this.workFlow.graph.save());
+    }
+
+    exportXML() {
+        this.workFlow.graph.saveXML();
     }
 
 }

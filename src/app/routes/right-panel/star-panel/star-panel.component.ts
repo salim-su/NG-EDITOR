@@ -8,13 +8,11 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 export class StarPanelComponent implements OnInit,OnChanges {
     @Input() selData;
     @Output() customClick = new EventEmitter<Object>();
-
-    value: string;
+    labelValue: string;
     constructor() {
     }
 
     ngOnInit() {
-        console.log(this.selData);
 
     }
     onChange(type:string,value: string): void {
@@ -22,13 +20,15 @@ export class StarPanelComponent implements OnInit,OnChanges {
             type:type, value: value,
         }
         this.customClick.emit(a);
-
-
-        console.log(value);
-        console.log(type);
     }
 
     ngOnChanges(changes: SimpleChanges): void {
+        for (let selDataKey in this.selData) {
+            console.log(selDataKey);
+            if (selDataKey == 'label') {
+                this.labelValue = this.selData[selDataKey];
+            }
+        }
         console.log(changes.selData.currentValue);
     }
 }
