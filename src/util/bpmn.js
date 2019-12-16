@@ -27,10 +27,10 @@ export function exportXML(json,canvas,createFile = true) {
       `${tab(6)}</bpmndi:BPMNShape>\n`;
     switch (node.clazz) {
       case 'start':
-        processXML += `${tab(4)}<startEvent id="${node.id}" beginDate="${node.beginDate}"></startEvent>\n`;
+        processXML += `${tab(4)}<startEvent id="${node.id}" name="${node.label}" beginDate="${node.beginDate}"></startEvent>\n`;
         break;
       case 'end':
-        processXML += `${tab(4)}<endEvent id="${node.id}"></endEvent>\n`;
+        processXML += `${tab(4)}<endEvent id="${node.id}" name="${node.label}" endDate="${node.endDate}"></endEvent>\n`;
         break;
       case 'userTask': {
         let assignments = "";
@@ -41,7 +41,7 @@ export function exportXML(json,canvas,createFile = true) {
             assignments += `flowable:candidateGroups="${node.assignValue.join(',')}"`;
           }
         }
-        processXML += `${tab(4)}<userTask id="${node.id}" name="${node.label}" ${assignments}></userTask>\n`;
+        processXML += `${tab(4)}<userTask id="${node.id}" name="${node.label}" ${assignments} ></userTask>\n`;
         break;
       }
       case 'javaTask': {

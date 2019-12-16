@@ -2,28 +2,25 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import * as moment from 'moment';
 
 @Component({
-    selector: 'app-star-panel',
-    templateUrl: './star-panel.component.html',
-    styleUrls: [ './star-panel.component.less' ],
-
+  selector: 'app-end-panel',
+  templateUrl: './end-panel.component.html',
+  styles: []
 })
-export class StarPanelComponent implements OnInit,OnChanges {
+export class EndPanelComponent implements OnInit,OnChanges {
     @Input() selData;
     @Output() customClick = new EventEmitter<Object>();
     labelValue: string;
-    beginDateValue: Date;
+    endDateValue: Date;
     emitData:any;
-
     constructor() {
     }
-
     ngOnInit() {
 
     }
     onChange(type:string,value: string): void {
 
-        if (type == 'beginDate') {
-            console.log('beginDate');
+        if (type == 'endDate') {
+            console.log('endDate');
             this.emitData ={
                 type, value: moment(value).format('YYYY-MM-DD hh:mm:ss'),
             }
@@ -45,10 +42,11 @@ export class StarPanelComponent implements OnInit,OnChanges {
             if (selDataKey == 'label') {
                 this.labelValue = this.selData[selDataKey];
             }
-            if (selDataKey == 'beginDate') {
-                this.beginDateValue = moment(this.selData[selDataKey]).toDate();
+            if (selDataKey == 'endDate') {
+                this.endDateValue = moment(this.selData[selDataKey]).toDate();
             }
         }
 
     }
+
 }

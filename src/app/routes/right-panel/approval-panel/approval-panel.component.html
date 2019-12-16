@@ -1,0 +1,44 @@
+<div flex style="flex-direction: column;">
+    <nz-form-item nzFlex mb15>
+        <nz-form-label [nzSpan]="4" style="margin-left: 27px;" C1B2A5A>节点文本</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <input w nz-input placeholder="请选择文本" [(ngModel)]="labelValue" (ngModelChange)="onChange('label',$event)"/>
+        </nz-form-control>
+    </nz-form-item>
+
+
+    <nz-form-item nzFlex mb15>
+        <nz-form-label [nzSpan]="4" style="margin-left: 27px;" C1B2A5A>指派类型</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <nz-select w [(ngModel)]="assignType" (ngModelChange)="onChange('assignType',$event)">
+                <nz-option nzValue="person" nzLabel="人员"></nz-option>
+                <nz-option nzValue="persongroup" nzLabel="人员组"></nz-option>
+            </nz-select>
+
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nzFlex mb15>
+        <nz-form-label [nzSpan]="4" style="margin-left: 27px;" C1B2A5A>审批人</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <nz-select w nzMode="multiple" [nzMaxTagCount]="3" [(ngModel)]="assignValue" (ngModelChange)="onChange('assignValue',$event)">
+                <nz-option nzValue="1" nzLabel="salimsu"></nz-option>
+                <nz-option nzValue="2" nzLabel="张三"></nz-option>
+                <nz-option nzValue="3" nzLabel="李四"></nz-option>
+            </nz-select>
+
+        </nz-form-control>
+    </nz-form-item>
+
+
+    <nz-form-item nzFlex mb0>
+        <nz-form-label [nzSpan]="4" style="margin-left: 27px;" C1B2A5A>到期时间</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <nz-date-picker w nzShowTime nzFormat="YYYY-MM-DD HH:mm:ss" nzPlaceHolder="请选择到期时间" [(ngModel)]="dueDateValue" (ngModelChange)="onChange('dueDate',$event)"
+            ></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+</div>
+
+
+<p>{{selData?.clazz}}</p>

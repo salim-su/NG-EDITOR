@@ -56,6 +56,8 @@ const routes: Routes = [
   { path: '**', redirectTo: 'exception/404' },
 ];
 
+
+
 @NgModule({
   imports: [
     RouterModule.forRoot(

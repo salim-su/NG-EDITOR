@@ -7,9 +7,9 @@
     </nz-form-item>
 
     <nz-form-item nzFlex mb0>
-        <nz-form-label [nzSpan]="4" style="margin-left: 27px;" C1B2A5A>开始时间</nz-form-label>
+        <nz-form-label [nzSpan]="4" style="margin-left: 27px;" C1B2A5A>结束时间</nz-form-label>
         <nz-form-control [nzSpan]="14">
-            <nz-date-picker w nzShowTime nzFormat="YYYY-MM-DD HH:mm:ss" nzPlaceHolder="请选择开始时间" [(ngModel)]="beginDateValue" (ngModelChange)="onChange('beginDate',$event)"
+            <nz-date-picker w nzShowTime nzFormat="YYYY-MM-DD HH:mm:ss" nzPlaceHolder="请选择结束时间" [(ngModel)]="endDateValue" (ngModelChange)="onChange('endDate',$event)"
             ></nz-date-picker>
         </nz-form-control>
     </nz-form-item>

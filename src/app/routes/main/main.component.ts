@@ -27,25 +27,27 @@ registerBehavior(G6);
     // selector: 'app-main',
     templateUrl: './main.component.html',
     styles: [
-        `
-      .footer {
-        position: absolute;
-        bottom: 0px;
-        width: 100%;
-        border-top: 1px solid rgb(232, 232, 232);
-        padding: 10px 16px;
-        text-align: right;
-        left: 0px;
-        background: #fff;
-      }
-    `
-    ]
+            `
+            .footer {
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+                border-top: 1px solid rgb(232, 232, 232);
+                padding: 10px 16px;
+                text-align: right;
+                left: 0px;
+                background: #fff;
+            }
+        `,
+    ],
+    styleUrls: [ './main.component.less' ],
+
 })
 export class MainComponent implements OnInit, OnChanges, AfterViewInit {
-    @Input() isView: boolean = false;
-    @Input() mode: string = 'edit';
-    @Input() height: number = 800;
-    @Input() lang: string = 'zh';
+    @Input() isView = false;
+    @Input() mode = 'edit';
+    @Input() height = 800;
+    @Input() lang = 'zh';
     @Input() data = { nodes: [], edges: [] };
     @Input() users: Array<any> = [];
     @Input() groups: Array<any> = [];
@@ -68,7 +70,7 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     graph: any=null;
     cmdPlugin: any=null;
     /*i18n*/
-    i18n = i18n['zh'];
+    i18n = i18n.zh;
 
     // @ViewChild('addItemPanel', { static: true }) private addItemPanel: ElementRef;
     @ViewChild('canvas', { static: true }) private canvas: ElementRef;
@@ -77,21 +79,9 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     @ViewChild('addItemPanel', { static: true }) addItemPanel: any;
 
 
-    // @ViewChild('addItemPanel', { static: true,read: ElementRef }) addItemPanel: ElementRef;
-    // @ViewChild('div', { static: true }) div: any;
-    // @ViewChild('alert1',{ static: true }) alert1:any;
-
     constructor() {
         registerShape(G6);
         registerBehavior(G6);
-        // console.log(G6.version);
-        // console.log(getShapeName('end'));
-        // console.log(Command);
-        // console.log(Toolbar);
-        // console.log(AddItemPanel);
-        // console.log(CanvasPanel);
-        // console.log(exportXML);
-        // console.log(registerShape);
     }
 
     ngOnInit() {
@@ -109,12 +99,13 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
             const canvasPanel = new CanvasPanel({ container: this.canvas.nativeElement });
             plugins = [this.cmdPlugin, toolbar, addItemPanel, canvasPanel];
         }
+
         const width = this.canvas.nativeElement.offsetWidth;
         this.graph = new G6.Graph({
-            plugins: plugins,
+            plugins,
             container: this.canvas.nativeElement,
             height: this.height,
-            width: width,
+            width,
             modes: {
                 default: ['drag-canvas', 'clickSelected'],
                 view: [],
@@ -171,19 +162,6 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
                 }
             }
         }
-
-        // if (changes.msg) {
-        //
-        // }
-
-        // console.log(changes.msg.currentValue);
-        // if (changes.msg.currentValue == changes.msg.previousValue) {
-        //     console.log('前后数据一致');
-        // } else {
-        //     console.log('前后数据不一致');
-        // }
-
-
     }
 
 
@@ -247,11 +225,11 @@ export class MainComponent implements OnInit, OnChanges, AfterViewInit {
     initEvents() {
         this.graph.on('afteritemselected', (items) => {
             if (items.length > 0) {
-                this.open();
             }
             if (items && items.length > 0) {
                 const item = this.graph.findById(items[0]);
                 this.selectedModel = { ...item.getModel() };
+                this.open();
             }
             else {
                 this.selectedModel = this.processModel;

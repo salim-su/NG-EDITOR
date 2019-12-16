@@ -1,0 +1,12 @@
+<div flex style="flex-direction: column;">
+    <nz-form-item nzFlex mb15>
+        <nz-form-label [nzSpan]="4" style="margin-left: 27px;" C1B2A5A>条件文本</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <input w nz-input placeholder="请选择文本" [(ngModel)]="labelValue" (ngModelChange)="onChange('label',$event)"/>
+        </nz-form-control>
+    </nz-form-item>
+
+</div>
+
+
+<p>{{selData?.clazz}}</p>

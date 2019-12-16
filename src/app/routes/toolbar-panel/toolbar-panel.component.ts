@@ -9,7 +9,7 @@ import i18n from '../../../locales';
 export class ToolbarPanelComponent implements OnInit {
     @ViewChild('toolbar_dom', { static: true }) private toolbar_dom: ElementRef;
     /*i18n*/
-    i18n = i18n['zh'];
+    i18n = i18n.zh;
 
     constructor() {
     }

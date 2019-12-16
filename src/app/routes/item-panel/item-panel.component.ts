@@ -9,7 +9,7 @@ import i18n from '../../../locales';
 export class ItemPanelComponent implements OnInit {
     @ViewChild('itemPanel_dom', { static: true }) private itemPanel_dom: ElementRef;
 
-    i18n = i18n['zh'];
+    i18n = i18n.zh;
 
     constructor() {
     }

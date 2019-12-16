@@ -1,50 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
 @-webkit-keyframes animal {
     0% {
-        transform: rotate(0deg);
         -ms-transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-        transform: rotate(-360deg);
         -ms-transform: rotate(-360deg);
         -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
     }
 }
 
 .rotate {
-    -webkit-animation: animal 1.5s infinite linear;
     -webkit-transform-origin: center center;
     -ms-transform-origin: center center;
     transform-origin: center center;
+    -webkit-animation: animal 1.5s infinite linear;
 }
 .heart {
+    position: fixed;
+    z-index: 999;
     width: 10px;
     height: 10px;
-    position: fixed;
     background: #f00;
-    transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
-    z-index: 999
+    transform: rotate(45deg)
 }
 
-.heart:after, .heart:before {
-    content: '';
+.heart::after, .heart::before {
+    position: absolute;
     width: inherit;
     height: inherit;
     background: inherit;
-    border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    position: absolute;
+    border-radius: 50%;
+    content: '';
 }
 
-.heart:after {
+.heart::after {
     top: -5px;
 }
 
-.heart:before {
+.heart::before {
     left: -5px;
 }
 [h] {
@@ -384,7 +384,7 @@ body {
 }
 
 [mb0] {
-    margin-bottom: 0px !important;
+    margin-bottom: 0 !important;
 }
 
 [mb5] {
@@ -525,8 +525,18 @@ body {
     flex-wrap: wrap !important;
 }
 
-/*workflow*/
+/* workflow */
 .itemPanel img:hover {
     border: 1px solid #ccc;
     cursor: move;
+}
+
+app-approval-panel , app-star-panel , app-end-panel{
+    .ant-calendar-picker {
+        width: 100% !important;
+    }
+
+    nz-picker {
+        width: 100% !important;
+    }
 }

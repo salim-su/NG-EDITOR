@@ -18,6 +18,9 @@ import { ToolbarPanelComponent } from './toolbar-panel/toolbar-panel.component';
 import { WorkflowComponent } from './workflow/workflow.component';
 import { StarPanelComponent } from './right-panel/star-panel/star-panel.component';
 import { AllRightPanelComponent } from './right-panel/all-right-panel/all-right-panel.component';
+import { ApprovalPanelComponent } from './right-panel/approval-panel/approval-panel.component';
+import { EndPanelComponent } from './right-panel/end-panel/end-panel.component';
+import { BranchPanelComponent } from './right-panel/branch-panel/branch-panel.component';
 
 const COMPONENTS = [
     DashboardComponent,
@@ -35,6 +38,9 @@ const COMPONENTS = [
     WorkflowComponent,
     StarPanelComponent,
     AllRightPanelComponent,
+    ApprovalPanelComponent,
+    EndPanelComponent,
+    BranchPanelComponent,
 
 ];
 const COMPONENTS_NOROUNT = [];
@@ -44,6 +50,7 @@ const COMPONENTS_NOROUNT = [];
     declarations: [
         ...COMPONENTS,
         ...COMPONENTS_NOROUNT,
+
     ],
     entryComponents: COMPONENTS_NOROUNT,
 })
